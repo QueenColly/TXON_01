@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="My personal portfolio showcasing my background, skills and contact information."
+    >
+
+    <title>Your Name | Personal Portfolio</title>
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/main.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Main navigation">
+
+            <a href="#home" class="logo">
+                YOUR<span>NAME.</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <a href="#contact" class="nav-cta">
+                Let's talk ↗
+            </a>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- INTRODUCTION / HEADER SECTION -->
+        <section class="hero container" id="home">
+
+            <p class="eyebrow">
+                SOFTWARE DEVELOPMENT PORTFOLIO
+            </p>
+
+            <h1>
+                Hello, I'm <span>Your Name.</span>
+                <br>
+                I build solutions through code.
+            </h1>
+
+            <p class="hero-description">
+                I am a software developer interested in building
+                useful, reliable and meaningful digital solutions.
+                I enjoy solving problems and continuously improving
+                my technical skills.
+            </p>
+
+            <a href="#contact" class="button button-primary">
+                Get in touch ↗
+            </a>
+
+        </section>
+
+
+        <!-- ABOUT ME -->
+        <section class="about section-padding" id="about">
+
+            <div class="container">
+
+                <p class="section-label">01 / ABOUT ME</p>
+
+                <h2>
+                    A little about
+                    <span>who I am.</span>
+                </h2>
+
+                <p class="section-description">
+                    I am passionate about technology and software
+                    development. I enjoy understanding real-world
+                    problems, exploring possible solutions and
+                    translating ideas into functional applications.
+
+                    My learning journey involves developing my
+                    programming skills, understanding software
+                    engineering principles and building practical
+                    projects.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SKILLS -->
+        <section class="skills section-padding" id="skills">
+
+            <div class="container">
+
+                <p class="section-label">02 / MY SKILLS</p>
+
+                <h2>
+                    Technologies I work with.
+                </h2>
+
+                <div class="skills-list">
+
+                    <span>Java</span>
+                    <span>Python</span>
+                    <span>JavaScript</span>
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>React</span>
+                    <span>Spring Boot</span>
+                    <span>FastAPI</span>
+                    <span>PostgreSQL</span>
+                    <span>MySQL</span>
+                    <span>Git</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT FORM -->
+        <section class="contact section-padding" id="contact">
+
+            <div class="container">
+
+                <p class="section-label">03 / CONTACT</p>
+
+                <h2>
+                    Let's start a
+                    <span>conversation.</span>
+                </h2>
+
+                <p class="section-description">
+                    Have a question, an opportunity or an interesting
+                    project? Send me a message.
+                </p>
+
+                <form id="contactForm" class="contact-form">
+
+                    <div class="form-group">
+                        <label for="name">Your name</label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            autocomplete="name"
+                            minlength="2"
+                            maxlength="80"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            maxlength="254"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="message">Your message</label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Write your message here..."
+                            minlength="10"
+                            maxlength="5000"
+                            rows="6"
+                            required
+                        ></textarea>
+                    </div>
+
+
+                    <p
+                        id="formStatus"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+
+                    <button
+                        type="submit"
+                        id="submitButton"
+                        class="button button-primary"
+                    >
+                        Send message ↗
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="container">
+            <p>
+                &copy; <span id="currentYear"></span> Your Name.
+                All rights reserved.
+            </p>
+        </div>
+
+    </footer>
+
+</body>
+</html>
