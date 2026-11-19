@@ -10,7 +10,7 @@
         content="My personal portfolio showcasing my background, skills and contact information."
     >
 
-    <title>Your Name | Personal Portfolio</title>
+    <title>Collete Umeh | Software Engineer </title>
 
     <link rel="stylesheet" href="/css/styles.css">
     <script src="/js/main.js" defer></script>
@@ -22,8 +22,8 @@
     <header class="site-header">
         <nav class="navbar container" aria-label="Main navigation">
 
-            <a href="#home" class="logo">
-                YOUR<span>NAME.</span>
+           <a href="#home" class="logo">
+                COLLETE<span>UMEH</span>
             </a>
 
             <ul class="nav-links">
@@ -43,30 +43,47 @@
     <main>
 
         <!-- INTRODUCTION / HEADER SECTION -->
-        <section class="hero container" id="home">
 
-            <p class="eyebrow">
-                SOFTWARE DEVELOPMENT PORTFOLIO
-            </p>
+<section class="hero container" id="home">
 
-            <h1>
-                Hello, I'm <span>Your Name.</span>
-                <br>
-                I build solutions through code.
-            </h1>
+    <div class="hero-content">
 
-            <p class="hero-description">
-                I am a software developer interested in building
-                useful, reliable and meaningful digital solutions.
-                I enjoy solving problems and continuously improving
-                my technical skills.
-            </p>
+        <p class="eyebrow">
+            SOFTWARE ENGINEER
+        </p>
 
+        <h1>
+            Hello, I'm
+            <span class="hero-name">Collete Umeh.</span>
+            <br>
+            I build
+            <span class="animated-role" id="changingRole">
+                digital experiences.
+            </span>
+        </h1>
+
+        <p class="hero-description">
+            I'm a software engineer passionate about technology,
+            problem-solving and building meaningful digital solutions.
+        </p>
+
+        <div class="hero-actions">
             <a href="#contact" class="button button-primary">
-                Get in touch ↗
+                Let's work together ↗
             </a>
 
-        </section>
+            <a href="#about" class="button button-outline">
+                Discover more ↓
+            </a>
+        </div>
+
+    </div>
+
+    <div class="hero-decoration" aria-hidden="true">
+        <div class="glow-circle"></div>
+    </div>
+
+</section>
 
 
         <!-- ABOUT ME -->
@@ -149,21 +166,21 @@
 
                 <form id="contactForm" class="contact-form">
 
-                    <div class="form-group">
-                        <label for="name">Your name</label>
+                   <div class="form-group">
+                        <label for="name">First name or username</label>
 
                         <input
                             type="text"
                             id="name"
                             name="name"
-                            placeholder="Enter your name"
+                            placeholder="e.g. Firstname or username"
                             autocomplete="name"
                             minlength="2"
                             maxlength="80"
                             required
                         >
+                        <small class="field-error" id="nameError"></small>
                     </div>
-
 
                     <div class="form-group">
                         <label for="email">Email address</label>
@@ -172,11 +189,12 @@
                             type="email"
                             id="email"
                             name="email"
-                            placeholder="Enter your email"
+                            placeholder="e.g. collete@example.com"
                             autocomplete="email"
                             maxlength="254"
                             required
                         >
+                        <small class="field-error" id="emailError"></small>
                     </div>
 
 
@@ -223,9 +241,9 @@
 
         <div class="container">
             <p>
-                &copy; <span id="currentYear"></span> Your Name.
-                All rights reserved.
-            </p>
+    &copy; <span id="currentYear"></span>
+    Collete Umeh. All rights reserved.
+</p>
         </div>
 
     </footer>

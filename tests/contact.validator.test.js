@@ -128,4 +128,65 @@ test("should accept Unicode names", () => {
     expect(result.data.name).toBe("Chinwé");
 });
 
+test("should accept a valid username", () => {
+    const result = validateContactMessage({
+        name: "collete_umeh",
+        email: "collete@gmail.com",
+        message: "I would like to discuss a project."
+    });
+
+    expect(result.errors).toEqual({});
+    expect(result.data.name).toBe("collete_umeh");
+});
+
+test("should reject a name containing only numbers", () => {
+    const result = validateContactMessage({
+        name: "123456",
+        email: "jane@example.com",
+        message: "I would like to discuss a project."
+    });
+
+    expect(result.errors.name).toBeDefined();
+});
+
+test("should reject a name containing invalid characters", () => {
+    const result = validateContactMessage({
+        name: "Jane@Doe",
+        email: "jane@example.com",
+        message: "I would like to discuss a project."
+    });
+
+    expect(result.errors.name).toBeDefined();
+});
+
+test("should reject an email without a domain extension", () => {
+    const result = validateContactMessage({
+        name: "Jane Doe",
+        email: "collete@company",
+        message: "I would like to discuss a project."
+    });
+
+    expect(result.errors.email).toBeDefined();
+});
+
+test("should reject an email containing consecutive dots", () => {
+    const result = validateContactMessage({
+        name: "Jane Doe",
+        email: "collete..umeh@gmail.com",
+        message: "I would like to discuss a project."
+    });
+
+    expect(result.errors.email).toBeDefined();
+});
+
+test("should reject a name that is not a string", () => {
+    const result = validateContactMessage({
+        name: 12345,
+        email: "jane@example.com",
+        message: "I would like to discuss a project."
+    });
+
+    expect(result.errors.name).toBeDefined();
+});
+
 });

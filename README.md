@@ -41,7 +41,7 @@ The application includes a contact form that accepts visitor details, validates 
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL :  https://github.com/QueenColly
+git clone https://github.com/QueenColly/TXON_01.git
 ```
 
 ### 2. Enter the project directory
@@ -111,7 +111,7 @@ For this project, successfully submitted messages are logged to the server conso
 
 ## Author
 
-Your Name : Collete Umeh
+ Collete Umeh
 
 ## Internship
 

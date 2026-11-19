@@ -108,44 +108,105 @@ body {
 .nav-cta:hover {
     background-color: var(--color-primary);
 }
+
 /* ==============================
-   5. HERO SECTION
+   5. ANIMATED HERO SECTION
 ================================= */
 
 .hero {
-    min-height: 75vh;
+    position: relative;
+    min-height: 78vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    overflow: hidden;
     padding-top: 80px;
     padding-bottom: 80px;
 }
 
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+}
+
 .eyebrow {
-    color: var(--color-primary);
+    color: var(--color-secondary);
     font-size: 0.85rem;
     font-weight: bold;
     letter-spacing: 3px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    animation: fadeInUp 0.8s ease both;
+}
+
+.eyebrow span {
+    color: var(--color-primary);
 }
 
 .hero h1 {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-size: clamp(2.8rem, 7vw, 5rem);
     line-height: 1.15;
-    max-width: 850px;
-    margin-bottom: 24px;
+    margin-bottom: 25px;
+    animation: fadeInUp 1s ease both;
 }
 
-.hero h1 span {
+.hero-name {
+    display: inline-block;
+
+    /* Fallback colour */
     color: var(--color-primary);
+
+    /* Animated gradient */
+    background-image: linear-gradient(
+        90deg,
+        #8b5cf6,
+        #c084fc,
+        #e879f9,
+        #8b5cf6
+    );
+
+    background-size: 300% 100%;
+    background-position: 0% center;
+
+    /* Display gradient inside the text */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: gradientMove 4s ease-in-out infinite;
+}
+
+.animated-role {
+    color: var(--color-secondary);
 }
 
 .hero-description {
     color: var(--color-muted);
     font-size: 1.1rem;
     max-width: 650px;
-    margin-bottom: 32px;
+    margin-bottom: 35px;
+    animation: fadeInUp 1.2s ease both;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    animation: fadeInUp 1.4s ease both;
+}
+
+.button-outline {
+    display: inline-block;
+    padding: 13px 25px;
+    border: 1px solid var(--color-primary);
+    border-radius: 6px;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.button-outline:hover {
+    background-color: var(--color-primary);
+    transform: translateY(-3px);
 }
 
 /* Reusable button */
@@ -404,4 +465,125 @@ body {
 
 .thank-you-page h1 span {
     color: var(--color-primary);
+}
+
+/* ==============================
+   HERO BACKGROUND EFFECT
+================================= */
+
+.hero-decoration {
+    position: absolute;
+    top: 5%;
+    right: -5%;
+    width: 500px;
+    height: 500px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 1;
+}
+
+.glow-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+
+   background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.65) 0%,
+    rgba(139, 92, 246, 0.30) 35%,
+    rgba(139, 92, 246, 0.10) 60%,
+    transparent 75%
+);
+
+filter: blur(25px);
+
+    animation: glowPulse 5s ease-in-out infinite alternate;
+}
+
+/* ==============================
+   ANIMATION KEYFRAMES
+================================= */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 100% center;
+    }
+}
+
+@keyframes glowPulse {
+    from {
+        transform: scale(0.9);
+        opacity: 0.6;
+    }
+
+    to {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+/* ==============================
+   HERO RESPONSIVENESS
+================================= */
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 70vh;
+    }
+
+    .hero-decoration {
+        width: 300px;
+        height: 300px;
+        right: -25%;
+        top: 15%;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.4rem, 9vw, 3.5rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-decoration {
+        opacity: 0.6;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+
+/* FORM VALIDATION FEEDBACK */
+
+.field-error {
+    color: #f87171;
+    font-size: 0.85rem;
+    margin-top: 6px;
+}
+
+.form-group input.invalid {
+    border-color: #f87171;
+}
+
+.form-group input.valid {
+    border-color: #22c55e;
 }
